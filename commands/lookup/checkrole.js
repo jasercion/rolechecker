@@ -10,7 +10,8 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const role = interaction.options.getRole('role');
-        const userlist = interaction.guild.roles.cache.get(role.id).members.map(m => m.displayName)
+        
+        const userlist = interaction.guild.roles.fetch({ id: role.id, force: true }).members.map(m => m.displayName)
         await interaction.reply({ content: `Users with ${role.name}: ${userlist}.`, ephemeral: true});
     },
 };
