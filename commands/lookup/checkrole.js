@@ -13,6 +13,6 @@ module.exports = {
         const guild = interaction.guild;
         await guild.members.fetch();
         //console.log(searchrole.members.map(m => m.id));
-        await interaction.reply({ content: `UIDs with ${searchrole.name}: {searchrole.members.map(m = > m.id)}.`, ephemeral: true});
+        await interaction.reply({ content: `UIDs with ${searchrole.name}: ${searchrole.members.map(m => m.id)}.`, ephemeral: true});
     },
 };
