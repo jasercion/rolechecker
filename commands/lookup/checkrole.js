@@ -9,8 +9,10 @@ module.exports = {
                 .setDescription('The role for the user list query.')
                 .setRequired(true)),
     async execute(interaction) {
-        const role = interaction.options.getRole('role');
-        const userlist = interaction.guild.roles.cache.get(role.id).members.map(m => m.displayName)
-        await interaction.reply({ content: `Users with ${role.name}: ${userlist}.`, ephemeral: true});
+        const searchrole = interaction.options.getRole('role');
+        const guild = interaction.guild;
+        await guild.members.fetch();
+        //console.log(searchrole.members.map(m => m.id));
+        await interaction.reply({ content: `UIDs with ${searchrole.name}: ${searchrole.members.map(m => m.id)}.`, ephemeral: true});
     },
 };
