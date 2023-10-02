@@ -1,3 +1,7 @@
+/* 
+Primary bot file
+*/
+
 // Import classes and token
 const fs = require('node:fs');
 const path = require('node:path');
@@ -7,6 +11,7 @@ const { token } = require('./config.json');
 // Create new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
+// Check for and collect commands
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -31,6 +36,7 @@ client.once(Events.ClientReady, c=> {
     console.log(`Ready: Logged in as ${c.user.tag}!`);
 });
 
+// Call commands on demand
 client.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 

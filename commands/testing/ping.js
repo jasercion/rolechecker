@@ -1,3 +1,8 @@
+/* 
+File detailing the ping command 
+Extremely simple command which just verifies the bot is alive
+*/ 
+
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
