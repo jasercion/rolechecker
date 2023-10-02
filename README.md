@@ -1,7 +1,7 @@
 # rolechecker
 Simple bot to return list of users with a specified discord role
 ## setup
-Require `config.json` file to be created in the top level directory with the form:
+Requires `config.json` file to be created in the top level directory with the form:
 ```
 {
     "token": "token-value",
