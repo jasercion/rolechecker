@@ -9,7 +9,10 @@ Requires `config.json` file to be created in the top level directory with the fo
     "guildId": "guild-id"
 }
 ```
-Requires `discord.js`, `node:fs`, and `node:path`.  
+Requires `discord.js`, `node:fs`, and `node:path`. 
+
+**NOTE:** `discord.js` requires Node.js 16.11.0 or newer
+
 Intents: `GatewayIntentBits.Guilds`, `GatewayIntentBits.GuildMembers`
 To run:
 ```
