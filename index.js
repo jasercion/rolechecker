@@ -1,3 +1,7 @@
+/* 
+Primary bot file
+*/
+
 // Import classes and token
 const fs = require('node:fs');
 const path = require('node:path');
