@@ -25,7 +25,7 @@ module.exports = {
                 console.error(err);
             }
         });
-        /* Return message format: */
+        // Return message format: 
         await interaction.reply({ content: `UIDs with ${searchrole.name}:`, ephemeral: true, files: [{attachment: filepath, name: filename}]});
     },
 };
